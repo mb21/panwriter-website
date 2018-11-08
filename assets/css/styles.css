@@ -1,3 +1,66 @@
 html, body {
   margin: 0;
+  font-family: Menlo, Monaco, monospace;
+  font-size: 17px;
+  color: #1a1a1a;
+  background-color: #f7f7f7;
+}
+
+a, .footnote {
+  color: #888;
+}
+
+.logo {
+  margin: 40px;
+  float: left;
+}
+
+main, footer {
+  margin: 0 auto;
+  padding: 60px 0 0 0;
+  max-width: 40em;
+  line-height: 30px;;
+}
+footer {
+  margin-bottom: 90px;
+}
+@media (max-width: 1100px) {
+  .logo {
+    margin: 20px;
+    float: right;
+  }
+  main, footer {
+    padding: 20px;
+  }
+  main {
+    padding-top: 55px;
+  }
+}
+
+main img {
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 17px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+figure {
+  margin: 30px 0;
+}
+figcaption {
+  margin-top: -20px;
+  margin-left: 15px;
+}
+
+p > a {
+  word-break: break-all;
+}
+
+@media (min-width: 1000px) {
+  ._only_mobile {
+    display: none;
+  }
 }
