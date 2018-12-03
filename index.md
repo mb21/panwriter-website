@@ -1,8 +1,6 @@
 # # PanWriter
 
-[**Download PanWriter 0.5<br class="_only_mobile"> pre-release for macOS**](https://github.com/mb21/panwriter/releases)
-
-_\_After copying the file to your `` `Applications` `` folder, the first time you have to right-click on the app, select `` `Open` `` and agree to a scary warning about us not being registered developers.\__
+[**Download PanWriter 0.5<br class="_only_mobile"> pre-release**](https://github.com/mb21/panwriter/releases)
 
 You also have to [install pandoc](https://github.com/jgm/pandoc/releases) to export to most formats.
 
