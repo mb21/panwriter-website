@@ -1,8 +1,12 @@
 # # PanWriter
 
-[**Download PanWriter 0.5<br class="_only_mobile"> pre-release**](https://github.com/mb21/panwriter/releases)
+PanWriter is [available on macOS, Windows and Linux](https://github.com/mb21/panwriter/releases).
 
-You also have to [install pandoc](https://github.com/jgm/pandoc/releases) to export to most formats.
+<a href="https://github.com/mb21/panwriter/releases" id="downloadInstallerBtn">
+  Download PanWriter<br class="_only_mobile"> pre-release
+</a>
+
+You also have to [install pandoc](https://pandoc.org/installing.html) to export to most formats.
 
 ## ## Distraction-free writing environment
 
