@@ -19,7 +19,8 @@ main, footer {
   margin: 0 auto;
   padding: 60px 0 0 0;
   max-width: 40em;
-  line-height: 30px;;
+  line-height: 30px;
+  display: block; /* IE11 */
 }
 footer {
   margin-bottom: 90px;
