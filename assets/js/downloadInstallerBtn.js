@@ -10,7 +10,7 @@
     ;
   if (macosPlatforms.indexOf(platform) !== -1) {
     detected = 'macOS';
-    target = '-mac.zip';
+    target = '.dmg';
   } else if (iosPlatforms.indexOf(platform) !== -1) {
   } else if (windowsPlatforms.indexOf(platform) !== -1) {
     detected = 'Windows';
