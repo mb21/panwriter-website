@@ -27,7 +27,9 @@
         return data.json();
     })
     .then(function(json) {
-      var assets = json[0].assets.filter(function(a){
+      var assets = json.filter(function(release) {
+        return !release.prerelease
+      })[0].assets.filter(function(a){
         return a.name.endsWith(target)
       });
       if (assets[0]) {
