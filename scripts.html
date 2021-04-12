@@ -1,3 +1,4 @@
+<script>
 (function() {
   // from https://stackoverflow.com/a/38241481/214446
   var userAgent = window.navigator.userAgent
@@ -22,7 +23,7 @@
   }
 
   if (target) {
-    fetch("https://api.github.com/repos/mb21/panwriter/releases")
+    fetch('https://api.github.com/repos/mb21/panwriter/releases')
     .then(function(data) {
         return data.json();
     })
@@ -33,10 +34,11 @@
         return a.name.endsWith(target)
       });
       if (assets[0]) {
-        var btn = document.getElementById('downloadInstallerBtn');
+        var btn = document.getElementById('download');
         btn.setAttribute('href', assets[0].browser_download_url);
         btn.innerHTML += ' for ' + detected;
       }
     });
   }
 })();
+</script>

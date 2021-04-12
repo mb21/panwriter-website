@@ -1,0 +1,134 @@
+<div class="toolbar">
+  <div class="toolbararea">
+    <div class="filename"><span>PanWriter</span></div>
+    <div class="btns">
+      <div class="btngroup">
+        <button class=""><a href="/try/">      <img alt="onlyEditor"  src="toolbar/notes.svg"></a></button>
+        <button class=""><a href="/try/#split"><img alt="split"       src="toolbar/vertical_split.svg"></a></button>
+        <button class="active">                <img alt="onlyPreview" src="toolbar/visibility.svg"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+:root {
+  /* about system-font: https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/ */
+  --system-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono-font: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+
+  --background-color: rgb(247, 247, 247);
+  --overlay-background-color: rgb(247, 247, 247);
+  --underlay-background-color: rgb(128, 128, 128);
+  --overlay-transparent-background-color: rgba(230, 230, 230, 0.749);
+  --button-active-color: rgb(236, 236, 236);
+  --button-active-onhover-color: rgb(211, 211, 211);
+  --font-color: rgb(26, 26, 26);
+  --highlight-font-color:rgb(136, 136, 136);
+  --filename-font-color: rgb(101, 101, 101);
+  --edited-font-color: rgb(136, 136, 136);
+  --cursor-color: black;
+  --input-background-color: white;
+  --input-border-color: rgb(233, 233, 233);
+  --input-border-bottom-color: rgb(199, 199, 199);
+  --separator-color: rgb(211, 211, 211);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: rgb(27, 27, 27);
+    --overlay-background-color: rgb(44, 44, 44);
+    --underlay-background-color: rgb(128, 128, 128);  /* TODO */
+    --overlay-transparent-background-color: rgba(44, 44, 44, 0.749);
+    --button-active-color: rgb(62, 62, 62);
+    --button-active-onhover-color: rgb(82, 82, 82);
+    --font-color: rgb(211, 211, 211);
+    --highlight-font-color:rgb(112, 112, 112);
+    --filename-font-color: rgb(196, 196, 196);
+    --edited-font-color: rgb(102, 102, 102);
+    --cursor-color: white;
+    --input-background-color: rgb(45, 45, 45);
+    --input-border-color: rgb(53, 53, 53);
+    --input-border-bottom-color: rgb(76, 76, 76);
+    --separator-color: rgb(1, 1, 1);
+  }
+}
+
+.toolbar {
+  position: fixed;
+  z-index: 99999;
+  height: 40px;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
+
+.toolbar > .toolbararea {
+  font-family: var(--system-font);
+  font-size: 13px;
+  grid-template-rows: 38px;
+  overflow: hidden;
+  -webkit-app-region: drag;
+  background: var(--overlay-background-color);
+  border-bottom: 1px solid var(--separator-color);
+  transition: opacity 0.2s ease-out;
+  display: grid;
+  grid-template-columns: max-content minmax(max-content, 1fr) auto minmax(max-content, 1fr);
+  grid-column-gap: 5px;
+  align-items: center;
+}
+
+.toolbar img {
+  -webkit-user-drag: none;
+}
+
+.toolbar .filename {
+  color: var(--filename-font-color);
+  grid-column-start: 3;
+  max-height: 30px;
+  cursor: default;
+}
+
+.toolbar .btns {
+  margin-left: auto;
+}
+.toolbar .btns > * {
+  display: inline-block;
+}
+
+.toolbar button {
+  -webkit-app-region: no-drag;
+  cursor: default;
+  height: 24px;
+  background: none;
+  font-size: 13px;
+  line-height: 5px;
+  margin-right: 5px;
+  border: 0;
+  border-radius: 5px;
+  padding: 1px 5px;
+}
+.toolbar button:hover,
+.toolbar button:active,
+.toolbar button.active {
+  background: var(--button-active-color);
+}
+.toolbar button:active:hover,
+.toolbar button.active:hover {
+  background: var(--button-active-onhover-color);
+}
+
+.toolbar button img {
+  height: 20px;
+}
+
+.toolbar .btngroup button:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: 0;
+}
+.toolbar .btngroup button:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-right: 0;
+}
+</style>
