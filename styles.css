@@ -4,15 +4,6 @@
 img[data-align] {
   float: right;
 }
-.btn {
-  border: 1px solid grey;
-  padding: 10px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-}
-.btn:hover {
-  opacity: 0.75;
-}
 ul {
   padding-left: 0;
 }
@@ -20,4 +11,18 @@ ul > li {
   list-style: none;
   margin: 1em 1em 1em 0;
   display: inline-block;
+}
+ul > li > a {
+  border: 1px solid grey;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+ul > li > a:hover {
+  opacity: 0.75;
+}
+@media (max-width: 600px) {
+  ul > li:nth-child(2) {
+    display: none;
+  }
 }

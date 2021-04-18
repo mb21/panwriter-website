@@ -3,6 +3,7 @@ clear
 cd ../panwriter
 yarn run website:build
 cd -
+rm -r try
 cp -r ../panwriter/try .
 
 pandoc -M mainfont='-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif' -M monobackgroundcolor=#f0f0f0 -s \

@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/try/static/css/main.29c187ab.chunk.css",
+    "main.js": "/try/static/js/main.91faa730.chunk.js",
+    "main.js.map": "/try/static/js/main.91faa730.chunk.js.map",
+    "runtime-main.js": "/try/static/js/runtime-main.e30344da.js",
+    "runtime-main.js.map": "/try/static/js/runtime-main.e30344da.js.map",
+    "static/js/2.de5f7942.chunk.js": "/try/static/js/2.de5f7942.chunk.js",
+    "static/js/2.de5f7942.chunk.js.map": "/try/static/js/2.de5f7942.chunk.js.map",
+    "index.html": "/try/index.html",
+    "static/css/main.29c187ab.chunk.css.map": "/try/static/css/main.29c187ab.chunk.css.map",
+    "static/js/2.de5f7942.chunk.js.LICENSE.txt": "/try/static/js/2.de5f7942.chunk.js.LICENSE.txt",
+    "static/media/back.13c91f44.svg": "/try/static/media/back.13c91f44.svg",
+    "static/media/macOS_window_close.c21794d6.svg": "/try/static/media/macOS_window_close.c21794d6.svg",
+    "static/media/macOS_window_maximize.6c8a1c55.svg": "/try/static/media/macOS_window_maximize.6c8a1c55.svg",
+    "static/media/macOS_window_minimize.433f72e8.svg": "/try/static/media/macOS_window_minimize.433f72e8.svg",
+    "static/media/metaEditor.74c7034b.svg": "/try/static/media/metaEditor.74c7034b.svg",
+    "static/media/notes.45f4d3e0.svg": "/try/static/media/notes.45f4d3e0.svg",
+    "static/media/page.f63130e2.svg": "/try/static/media/page.f63130e2.svg",
+    "static/media/vertical_split.963a5adf.svg": "/try/static/media/vertical_split.963a5adf.svg",
+    "static/media/visibility.3ab43ae1.svg": "/try/static/media/visibility.3ab43ae1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e30344da.js",
+    "static/js/2.de5f7942.chunk.js",
+    "static/css/main.29c187ab.chunk.css",
+    "static/js/main.91faa730.chunk.js"
+  ]
+}
