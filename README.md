@@ -1,6 +1,5 @@
 # PanWriter Website
 
-To preview locally:
+To generate `index.html` and `try/`:
 
-    bundle install
-    bundle exec jekyll serve
+    ./generate.sh

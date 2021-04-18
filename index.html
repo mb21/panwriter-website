@@ -165,160 +165,29 @@
       tbody, th {
         border-color: #d3d3d3;
       }
-      pre, code {
-        background-color: #1b1b1b;
+      div.sourceCode {
+        filter: invert(1);
+        color: initial;
       }
-      }
+    }
   </style>
   <link rel="stylesheet" href="styles.css" />
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
+  <link rel="icon" type="image/png" href="https://github.com/mb21/panwriter/raw/master/icons/icon.png" />
+  <script data-goatcounter="https://mb21.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
-<div class="toolbar">
-  <div class="toolbararea">
-    <div class="filename"><span>PanWriter</span></div>
-    <div class="btns">
-      <div class="btngroup">
-        <button class=""><a href="/try/">      <img alt="onlyEditor"  src="toolbar/notes.svg"></a></button>
-        <button class=""><a href="/try/#split"><img alt="split"       src="toolbar/vertical_split.svg"></a></button>
-        <button class="active">                <img alt="onlyPreview" src="toolbar/visibility.svg"></button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<style>
-:root {
-  /* about system-font: https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/ */
-  --system-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-  --mono-font: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
-
-  --background-color: rgb(247, 247, 247);
-  --overlay-background-color: rgb(247, 247, 247);
-  --underlay-background-color: rgb(128, 128, 128);
-  --overlay-transparent-background-color: rgba(230, 230, 230, 0.749);
-  --button-active-color: rgb(236, 236, 236);
-  --button-active-onhover-color: rgb(211, 211, 211);
-  --font-color: rgb(26, 26, 26);
-  --highlight-font-color:rgb(136, 136, 136);
-  --filename-font-color: rgb(101, 101, 101);
-  --edited-font-color: rgb(136, 136, 136);
-  --cursor-color: black;
-  --input-background-color: white;
-  --input-border-color: rgb(233, 233, 233);
-  --input-border-bottom-color: rgb(199, 199, 199);
-  --separator-color: rgb(211, 211, 211);
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: rgb(27, 27, 27);
-    --overlay-background-color: rgb(44, 44, 44);
-    --underlay-background-color: rgb(128, 128, 128);  /* TODO */
-    --overlay-transparent-background-color: rgba(44, 44, 44, 0.749);
-    --button-active-color: rgb(62, 62, 62);
-    --button-active-onhover-color: rgb(82, 82, 82);
-    --font-color: rgb(211, 211, 211);
-    --highlight-font-color:rgb(112, 112, 112);
-    --filename-font-color: rgb(196, 196, 196);
-    --edited-font-color: rgb(102, 102, 102);
-    --cursor-color: white;
-    --input-background-color: rgb(45, 45, 45);
-    --input-border-color: rgb(53, 53, 53);
-    --input-border-bottom-color: rgb(76, 76, 76);
-    --separator-color: rgb(1, 1, 1);
-  }
-}
-
-.toolbar {
-  position: fixed;
-  z-index: 99999;
-  height: 40px;
-  width: 100vw;
-  top: 0;
-  left: 0;
-}
-
-.toolbar > .toolbararea {
-  font-family: var(--system-font);
-  font-size: 13px;
-  grid-template-rows: 38px;
-  overflow: hidden;
-  -webkit-app-region: drag;
-  background: var(--overlay-background-color);
-  border-bottom: 1px solid var(--separator-color);
-  transition: opacity 0.2s ease-out;
-  display: grid;
-  grid-template-columns: max-content minmax(max-content, 1fr) auto minmax(max-content, 1fr);
-  grid-column-gap: 5px;
-  align-items: center;
-}
-
-.toolbar img {
-  -webkit-user-drag: none;
-}
-
-.toolbar .filename {
-  color: var(--filename-font-color);
-  grid-column-start: 3;
-  max-height: 30px;
-  cursor: default;
-}
-
-.toolbar .btns {
-  margin-left: auto;
-}
-.toolbar .btns > * {
-  display: inline-block;
-}
-
-.toolbar button {
-  -webkit-app-region: no-drag;
-  cursor: default;
-  height: 24px;
-  background: none;
-  font-size: 13px;
-  line-height: 5px;
-  margin-right: 5px;
-  border: 0;
-  border-radius: 5px;
-  padding: 1px 5px;
-}
-.toolbar button:hover,
-.toolbar button:active,
-.toolbar button.active {
-  background: var(--button-active-color);
-}
-.toolbar button:active:hover,
-.toolbar button.active:hover {
-  background: var(--button-active-onhover-color);
-}
-
-.toolbar button img {
-  height: 20px;
-}
-
-.toolbar .btngroup button:not(:first-child) {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  border-left: 0;
-}
-.toolbar .btngroup button:not(:last-child) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  margin-right: 0;
-}
-</style>
-<p><img src="logo.png" class="logo" width="128" /></p>
+<p><img src="https://github.com/mb21/panwriter/raw/master/icons/icon.png" class="logo" width="128" /></p>
 <h1 id="panwriter">PanWriter</h1>
 <p>PanWriter is available on macOS, Windows and Linux.</p>
-<p><strong><a href="https://github.com/mb21/panwriter/releases/" id="download" class="btn">Download</a></strong> <a href="/try/#split" class="btn">Try online</a></p>
+<p><a href="https://github.com/mb21/panwriter/releases/" id="download" class="btn">Download</a> <a href="/try/" class="btn">Try online</a></p>
 <p>You also have to <a href="https://pandoc.org/installing.html">install pandoc</a> to export to most formats.</p>
 <h2 id="distraction-free-writing-environment">Distraction-free writing environment</h2>
 <p>Focus on the content of your text. No fiddling around in menus or getting distracted by buttons. No selecting fonts and layouting before your text is actually written. Instead, you can write text in Markdown<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> – a convention on how to write plain text files. Basically, it’s like you would write an Email. It looks like the text on this page.</p>
 <figure>
-<img src="../screenshot.png" alt="Markdown on the left" /><figcaption aria-hidden="true">Markdown on the left</figcaption>
+<img src="https://github.com/mb21/panwriter/raw/master/screenshot.png" alt="Markdown on the left" /><figcaption aria-hidden="true">Markdown on the left</figcaption>
 </figure>
 <p>PanWriter highlights a few things, like headings, for you. Other than that, it just gets out of the way, so you can focus on your text.</p>
 <h2 id="beautifully-simple-gui-all-the-power-of-pandoc-underneath">Beautifully simple GUI – all the power of pandoc underneath</h2>
@@ -327,16 +196,16 @@
 <h2 id="importexport-word-html-and-plenty-of-other-formats">Import/Export: Word, HTML and plenty of other formats</h2>
 <p>Simply drag a <code>.docx</code>-file onto the PanWriter app: it will be converted to Markdown and opened so you can edit the text in the distraction-free writing environment of PanWriter. When you’re done, use <code>File -&gt; Export</code> to convert the text back to .docx, or any other of pandoc’s output formats.</p>
 <figure>
-<img src="../screenshot-export.png" alt="Export formats" /><figcaption aria-hidden="true">Export formats</figcaption>
+<img src="https://github.com/mb21/panwriter/raw/master/screenshot-export.png" alt="Export formats" /><figcaption aria-hidden="true">Export formats</figcaption>
 </figure>
 <h2 id="paginated-preview-for-print-and-pdf">Paginated preview for print and PDF</h2>
 <p>Once you’ve written a first draft of your text, you might want to see how it would look like in print. Instead of exporting, you can simply open the preview pane. A unique feature among markdown editors is that PanWriter actually lays out your text on pages in the preview – suddenly your text becomes tangible, and you can see where pagebreaks end up.</p>
 <p>It’s not a good idea to start layouting before you’ve finished the hard work of the first few drafts. But once you’re there, you can apply a pre-defined layout template – or tune the layout yourself by adding a few lines of <a href="https://developer.mozilla.org/docs/Glossary/CSS">CSS</a>, the layouting language of the web. Changes are reflected live in the preview.</p>
 <figure>
-<img src="../screenshot-css.png" alt="CSS is reflected live" /><figcaption aria-hidden="true">CSS is reflected live</figcaption>
+<img src="https://github.com/mb21/panwriter/raw/master/screenshot-css.png" alt="CSS is reflected live" /><figcaption aria-hidden="true">CSS is reflected live</figcaption>
 </figure>
 <h2 id="free-and-open-source">Free and Open Source</h2>
-<p>PanWriter is free and open source software. Find <a href="" title="https://github.com/mb21/panwriter">PanWriter</a> on GitHub to read the README or open an issue, if you have a question or want to give feedback:</p>
+<p>PanWriter is free and open source software. Find <a href="https://github.com/mb21/panwriter">PanWriter on GitHub</a> to read the README or open an issue, if you have a question or want to give feedback:</p>
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
@@ -369,7 +238,7 @@
   }
 
   if (target) {
-    fetch("https://api.github.com/repos/mb21/panwriter/releases")
+    fetch('https://api.github.com/repos/mb21/panwriter/releases')
     .then(function(data) {
         return data.json();
     })
