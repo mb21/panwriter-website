@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/try/static/css/main.29c187ab.chunk.css",
-    "main.js": "/try/static/js/main.91faa730.chunk.js",
-    "main.js.map": "/try/static/js/main.91faa730.chunk.js.map",
+    "main.js": "/try/static/js/main.20b5119c.chunk.js",
+    "main.js.map": "/try/static/js/main.20b5119c.chunk.js.map",
     "runtime-main.js": "/try/static/js/runtime-main.e30344da.js",
     "runtime-main.js.map": "/try/static/js/runtime-main.e30344da.js.map",
-    "static/js/2.de5f7942.chunk.js": "/try/static/js/2.de5f7942.chunk.js",
-    "static/js/2.de5f7942.chunk.js.map": "/try/static/js/2.de5f7942.chunk.js.map",
+    "static/js/2.e3a1b730.chunk.js": "/try/static/js/2.e3a1b730.chunk.js",
+    "static/js/2.e3a1b730.chunk.js.map": "/try/static/js/2.e3a1b730.chunk.js.map",
     "index.html": "/try/index.html",
     "static/css/main.29c187ab.chunk.css.map": "/try/static/css/main.29c187ab.chunk.css.map",
-    "static/js/2.de5f7942.chunk.js.LICENSE.txt": "/try/static/js/2.de5f7942.chunk.js.LICENSE.txt",
+    "static/js/2.e3a1b730.chunk.js.LICENSE.txt": "/try/static/js/2.e3a1b730.chunk.js.LICENSE.txt",
     "static/media/back.13c91f44.svg": "/try/static/media/back.13c91f44.svg",
     "static/media/macOS_window_close.c21794d6.svg": "/try/static/media/macOS_window_close.c21794d6.svg",
     "static/media/macOS_window_maximize.6c8a1c55.svg": "/try/static/media/macOS_window_maximize.6c8a1c55.svg",
@@ -22,8 +22,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.e30344da.js",
-    "static/js/2.de5f7942.chunk.js",
+    "static/js/2.e3a1b730.chunk.js",
     "static/css/main.29c187ab.chunk.css",
-    "static/js/main.91faa730.chunk.js"
+    "static/js/main.20b5119c.chunk.js"
   ]
 }
