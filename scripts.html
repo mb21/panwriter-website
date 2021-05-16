@@ -41,4 +41,8 @@
     });
   }
 })();
+if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+  // the preview doesn't really work in Safari
+  document.getElementById('try').style.display = 'none';
+}
 </script>
