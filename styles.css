@@ -26,3 +26,17 @@ ul > li > a:hover {
     display: none;
   }
 }
+figure {
+  margin: 0;
+}
+figcaption {
+  font-style: italic;
+}
+@media (max-width: 600px) {
+  figure {
+    margin: 0 -1em;
+  }
+  figcaption {
+    margin-left: 1em;
+  }
+}
