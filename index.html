@@ -8,7 +8,8 @@
   <style>
     html {
       line-height: 1.5;
-      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI,
+    sans-serif;
       font-size: 20px;
       color: #1a1a1a;
       background-color: #fdfdfd;
@@ -21,7 +22,7 @@
       padding-top: 50px;
       padding-bottom: 50px;
       hyphens: auto;
-      word-wrap: break-word;
+      overflow-wrap: break-word;
       text-rendering: optimizeLegibility;
       font-kerning: normal;
     }
@@ -29,6 +30,9 @@
       body {
         font-size: 0.9em;
         padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
       }
     }
     @media print {
@@ -96,6 +100,7 @@
     pre code {
       padding: 0;
       overflow: visible;
+      overflow-wrap: normal;
     }
     .sourceCode {
      background-color: transparent;
@@ -137,6 +142,12 @@
     #TOC li {
       list-style: none;
     }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
     #TOC a:not(:hover) {
       text-decoration: none;
     }
@@ -147,75 +158,107 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-    @media screen and (prefers-color-scheme: dark) {
-      html {
-        color: #d3d3d3;
-        background-color: #101010;
-      }
-      a, a:visited {
-        color: #d3d3d3;
-      }
-      blockquote {
-        border-color: #707070;
-        color: #d3d3d3;
-      }
-      hr {
-        background-color: #d3d3d3;
-      }
-      tbody, th {
-        border-color: #d3d3d3;
-      }
-      pre, code {
-        background-color: initial;
-      }
-      div.sourceCode {
-        filter: invert(1);
-        color: initial;
-      }
-    }
   </style>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="https://github.com/mb21/panwriter/raw/master/icons/icon.png" />
+  <script data-goatcounter="https://mb21.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
-  <link rel="icon" type="image/png" href="https://github.com/mb21/panwriter/raw/master/icons/icon.png" />
-  <script data-goatcounter="https://mb21.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
-<p><img src="https://github.com/mb21/panwriter/raw/master/icons/icon.png" data-align="right" width="128" /></p>
+<p><img
+src="https://github.com/mb21/panwriter/raw/master/icons/icon.png"
+data-align="right" width="128" /></p>
 <h1 id="panwriter">PanWriter</h1>
 <p>PanWriter is available on macOS, Windows and Linux.</p>
 <ul>
-<li><a href="https://github.com/mb21/panwriter/releases/" id="download">Download</a></li>
+<li><a href="https://github.com/mb21/panwriter/releases/"
+id="download">Download</a></li>
 <li><a href="/try/" id="try">Try online</a></li>
 </ul>
-<p>You also have to <a href="https://pandoc.org/installing.html">install pandoc</a> to export to most formats.</p>
-<h2 id="distraction-free-writing-environment">Distraction-free writing environment</h2>
-<p>Focus on the content of your text. No fiddling around in menus or getting distracted by buttons. No selecting fonts and layouting before your text is actually written. Instead, you can write text in <a href="https://commonmark.org/help/">Markdown</a> – a convention on how to write plain text files. Basically, it’s like you would write an Email.</p>
+<p>You also have to <a href="https://pandoc.org/installing.html">install
+pandoc</a> to export to most formats.</p>
+<h2 id="distraction-free-writing-environment">Distraction-free writing
+environment</h2>
+<p>Focus on the content of your text. No fiddling around in menus or
+getting distracted by buttons. No selecting fonts and layouting before
+your text is actually written. Instead, you can write text in <a
+href="https://commonmark.org/help/">Markdown</a> – a convention on how
+to write plain text files. Basically, it’s like you would write an
+Email.</p>
 <figure>
-<img src="https://github.com/mb21/panwriter/raw/master/screenshot.png" alt="Markdown on the left, preview on the right" /><figcaption aria-hidden="true">Markdown on the left, preview on the right</figcaption>
+<img src="https://github.com/mb21/panwriter/raw/master/screenshot.png"
+alt="Markdown on the left, preview on the right" />
+<figcaption aria-hidden="true">Markdown on the left, preview on the
+right</figcaption>
 </figure>
-<p>PanWriter highlights a few things, like headings, for you. Other than that, it just gets out of the way, so you can focus on your text.</p>
-<h2 id="beautifully-simple-gui-all-the-power-of-pandoc-underneath">Beautifully simple GUI – all the power of pandoc underneath</h2>
-<p><a href="https://pandoc.org">Pandoc</a> is a well-known and treasured tool among hackers.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> It can convert between all sorts of document formats – from and to Markdown, HTML webpages, MS Office Word <code>.docx</code>, EPUB eBooks, LaTeX for academic publishing, and many more. You can even generate PDF and PowerPoint slide-shows, as well as export to InDesign ICML. But until now, users had to master the command-line, before they could tap into the power of pandoc. No longer!</p>
-<p>But if you eventually need to automate your workflow, it’s easy to start using pandoc on the command-line, write <a href="http://pandoc.org/lua-filters.html">pandoc scripts</a> that transform your documents in highly customizable ways, or integrate with web services or other applications – all while continuing to write in PanWriter.</p>
-<h2 id="importexport-word-html-and-plenty-of-other-formats">Import/Export: Word, HTML and plenty of other formats</h2>
-<p>Simply drag a <code>.docx</code>-file onto the PanWriter app: it will be converted to Markdown and opened so you can edit the text in the distraction-free writing environment of PanWriter. When you’re done, use <code>File -&gt; Export</code> to convert the text back to .docx, or any other of pandoc’s output formats.</p>
+<p>PanWriter highlights a few things, like headings, for you. Other than
+that, it just gets out of the way, so you can focus on your text.</p>
+<h2
+id="beautifully-simple-gui-all-the-power-of-pandoc-underneath">Beautifully
+simple GUI – all the power of pandoc underneath</h2>
+<p><a href="https://pandoc.org">Pandoc</a> is a well-known and treasured
+tool among hackers.<a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a> It can convert between all sorts of
+document formats – from and to Markdown, HTML webpages, MS Office Word
+<code>.docx</code>, EPUB eBooks, LaTeX for academic publishing, and many
+more. You can even generate PDF and PowerPoint slide-shows, as well as
+export to InDesign ICML. But until now, users had to master the
+command-line, before they could tap into the power of pandoc. No
+longer!</p>
+<p>But if you eventually need to automate your workflow, it’s easy to
+start using pandoc on the command-line, write <a
+href="http://pandoc.org/lua-filters.html">pandoc scripts</a> that
+transform your documents in highly customizable ways, or integrate with
+web services or other applications – all while continuing to write in
+PanWriter.</p>
+<h2
+id="importexport-word-html-and-plenty-of-other-formats">Import/Export:
+Word, HTML and plenty of other formats</h2>
+<p>Simply drag a <code>.docx</code>-file onto the PanWriter app: it will
+be converted to Markdown and opened so you can edit the text in the
+distraction-free writing environment of PanWriter. When you’re done, use
+<code>File -&gt; Export</code> to convert the text back to .docx, or any
+other of pandoc’s output formats.</p>
 <figure>
-<img src="https://github.com/mb21/panwriter/raw/master/screenshot-export.png" alt="Export formats" /><figcaption aria-hidden="true">Export formats</figcaption>
+<img
+src="https://github.com/mb21/panwriter/raw/master/screenshot-export.png"
+alt="Export formats" />
+<figcaption aria-hidden="true">Export formats</figcaption>
 </figure>
-<h2 id="paginated-preview-for-print-and-pdf">Paginated preview for print and PDF</h2>
-<p>Once you’ve written a first draft of your text, you might want to see how it would look like in print. Instead of exporting, you can simply open the preview pane. A unique feature among markdown editors is that PanWriter actually lays out your text on pages in the preview – suddenly your text becomes tangible, and you can see where pagebreaks end up.</p>
-<p>It’s not a good idea to start layouting before you’ve finished the hard work of the first few drafts. But once you’re there, you can apply a pre-defined layout template – or tune the layout yourself by adding a few lines of <a href="https://developer.mozilla.org/docs/Glossary/CSS">CSS</a>, the layouting language of the web. Changes are reflected live in the preview.</p>
+<h2 id="paginated-preview-for-print-and-pdf">Paginated preview for print
+and PDF</h2>
+<p>Once you’ve written a first draft of your text, you might want to see
+how it would look like in print. Instead of exporting, you can simply
+open the preview pane. A unique feature among markdown editors is that
+PanWriter actually lays out your text on pages in the preview – suddenly
+your text becomes tangible, and you can see where pagebreaks end up.</p>
+<p>It’s not a good idea to start layouting before you’ve finished the
+hard work of the first few drafts. But once you’re there, you can apply
+a pre-defined layout template – or tune the layout yourself by adding a
+few lines of <a
+href="https://developer.mozilla.org/docs/Glossary/CSS">CSS</a>, the
+layouting language of the web. Changes are reflected live in the
+preview.</p>
 <figure>
-<img src="https://github.com/mb21/panwriter/raw/master/screenshot-css.png" alt="CSS is reflected live" /><figcaption aria-hidden="true">CSS is reflected live</figcaption>
+<img
+src="https://github.com/mb21/panwriter/raw/master/screenshot-css.png"
+alt="CSS is reflected live" />
+<figcaption aria-hidden="true">CSS is reflected live</figcaption>
 </figure>
 <h2 id="free-and-open-source">Free and Open Source</h2>
-<p>PanWriter is free and open source software. Visit <a href="https://github.com/mb21/panwriter">PanWriter on GitHub</a> to read the README, and please open an issue if you have a question or would like to give feedback.</p>
-<section class="footnotes" role="doc-endnotes">
+<p>PanWriter is free and open source software. Visit <a
+href="https://github.com/mb21/panwriter#panwriter">PanWriter on
+GitHub</a> to read the README, and please open an issue if you have a
+question or would like to give feedback.</p>
+<section class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p><a href="https://news.ycombinator.com/item?id=17855104">Hacker-News</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1" role="doc-endnote"><p><a
+href="https://news.ycombinator.com/item?id=17855104">Hacker-News</a><a
+href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 <script>
