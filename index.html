@@ -162,21 +162,56 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="https://github.com/mb21/panwriter/raw/master/icons/icon.png" />
   <script data-goatcounter="https://mb21.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <style>
+  #download {
+    font-weight: bold;
+  }
+  .download ul {
+    padding-left: 0;
+  }
+  .download ul > li {
+    list-style: none;
+    margin: 1em 1em 1em 0;
+    display: inline-block;
+  }
+  .download ul > li > a {
+    border: 1px solid grey;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  .download ul > li > a:hover {
+    opacity: 0.75;
+  }
+  @media (max-width: 600px) {
+    .download ul > li:nth-child(2) {
+      display: none;
+    }
+  }
+  </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 </head>
 <body>
-<p><img
-src="https://github.com/mb21/panwriter/raw/master/icons/icon.png"
-data-align="right" width="128" /></p>
+<nav id="nav">
+  <a href="/"><img src="https://github.com/mb21/panwriter/raw/master/icons/icon.png" width="128" height="128"></a>
+  <p><a href="/">Home</a></p>
+  <p><a href="/MANUAL.html">Manual</a></p>
+</nav>
+
+<a href="https://github.com/mb21/panwriter">
+  <img loading="lazy" width="128" height="128" src="forkme.svg" class="forkme" alt="Fork me on GitHub" />
+</a>
 <h1 id="panwriter">PanWriter</h1>
-<p>PanWriter is available on macOS, Windows and Linux.</p>
+<p>Markdown editor for macOS, Windows and Linux.</p>
+<div class="download">
 <ul>
 <li><a href="https://github.com/mb21/panwriter/releases/"
 id="download">Download</a></li>
 <li><a href="/try/" id="try">Try online</a></li>
 </ul>
+</div>
 <p>You also have to <a href="https://pandoc.org/installing.html">install
 pandoc</a> to export to most formats.</p>
 <h2 id="distraction-free-writing-environment">Distraction-free writing
@@ -250,8 +285,8 @@ alt="CSS is reflected live" />
 <h2 id="free-and-open-source">Free and Open Source</h2>
 <p>PanWriter is free and open source software. Visit <a
 href="https://github.com/mb21/panwriter#panwriter">PanWriter on
-GitHub</a> to read the README, and please open an issue if you have a
-question or would like to give feedback.</p>
+GitHub</a> and please open an issue if you have a question or would like
+to give feedback.</p>
 <section class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />

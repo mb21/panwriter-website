@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>PanWriter Manual</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI,
+    sans-serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      background-color: #f0f0f0;
+      padding: .2em .4em;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      background-color: #f0f0f0;
+      padding: 1em;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="https://github.com/mb21/panwriter/raw/master/icons/icon.png" />
+  <script data-goatcounter="https://mb21.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<nav id="nav">
+  <a href="/"><img src="https://github.com/mb21/panwriter/raw/master/icons/icon.png" width="128" height="128"></a>
+  <p><a href="/">Home</a></p>
+  <p><a href="/MANUAL.html">Manual</a></p>
+</nav>
+
+<a href="https://github.com/mb21/panwriter">
+  <img loading="lazy" width="128" height="128" src="forkme.svg" class="forkme" alt="Fork me on GitHub" />
+</a>
+<header id="title-block-header">
+<h1 class="title">PanWriter Manual</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of Contents</h2>
+<ul>
+<li><a href="#export-preview-to-pdf">Export preview to PDF</a></li>
+<li><a href="#export-via-pandoc">Export via pandoc</a></li>
+<li><a href="#user-data-directory">User Data Directory</a></li>
+<li><a href="#settings">Settings</a></li>
+<li><a href="#default-css-and-yaml">Default CSS and YAML</a></li>
+<li><a href="#document-types-themes">Document types / themes</a></li>
+<li><a href="#markdown-syntax">Markdown syntax</a></li>
+<li><a href="#launching-from-the-command-line">Launching from the
+command-line</a></li>
+<li><a href="#about-css-for-print">About CSS for print</a></li>
+</ul>
+</nav>
+<h2 id="export-preview-to-pdf">Export preview to PDF</h2>
+<p>Select <code>File -&gt; 'Print / PDF'</code> and
+<code>PDF -&gt; 'Save as PDF'</code> in the print dialog (exact naming
+might depend on your OS).</p>
+<p>This will export exactly what’s shown in the preview, and not use
+pandoc at all.</p>
+<p>You can change the styling of the preview and immediately see the
+changes.</p>
+<p><img
+src="https://github.com/mb21/panwriter/raw/master/screenshot-css.png" /></p>
+<h2 id="export-via-pandoc">Export via pandoc</h2>
+<p>First, install the <a href="http://pandoc.org/installing.html">latest
+pandoc version</a>, then:</p>
+<p>Select <code>File -&gt; Export</code> and choose a format.</p>
+<p><img
+src="https://github.com/mb21/panwriter/raw/master/screenshot-export.png" /></p>
+<p>If you have a YAML metadata block, like in the following example,
+PanWriter will look at the extension of the filename you chose in the
+dialog, and look up the corresponding key in the <code>output</code>
+YAML metadata, for example when exporting the following markdown to
+<code>test.html</code>:</p>
+<pre><code>---
+title: my document
+fontsize: 18px
+pdf-format: latex  # optional
+output:
+  html:
+    katex: true  # for math output
+    include-in-header:
+      - foo.css
+      - bar.js
+  latex:
+    pdf-engine: xelatex
+    toc: true
+    toc-depth: 3
+    template: letter.tex
+    metadata:
+      fontsize: 12pt
+  epub:
+    to: epub2  # default would be epub3
+---
+
+# my document</code></pre>
+<p>this command will be executed:</p>
+<pre><code>pandoc --toc --include-in-header foo.css --include-in-header bar.js --output test.html --to html --standalone</code></pre>
+<p>See the <a href="http://pandoc.org/MANUAL.html">pandoc user’s
+guide</a> for available options.</p>
+<p>There are two exceptions to the rule that the key in the
+<code>output</code> YAML is the file extension:</p>
+<ol type="1">
+<li>When exporting to a <code>.tex</code> file, the key should be named
+<code>latex</code>.</li>
+<li>When exporting to a <code>.pdf</code> file, the key for PanWriter to
+look up in the <code>output</code> YAML can be specified with the
+<code>pdf-format</code> key (see example above). Default is also
+<code>latex</code>, but you can also use <code>context</code>,
+<code>html</code>, <code>ms</code>, <code>beamer</code>,
+<code>revealjs</code>, etc. In fact, you could set it to anything, if
+you had a corresponding key in the <code>output</code> YAML with a
+<code>to:</code> field. See also <a
+href="http://pandoc.org/MANUAL.html#creating-a-pdf">Creating a PDF with
+pandoc</a>.</li>
+</ol>
+<h2 id="user-data-directory">User Data Directory</h2>
+<p>You can place certain files in the PanWriter user directory, which <a
+href="https://electronjs.org/docs/api/app#appgetpathname">should
+be</a>:</p>
+<ul>
+<li>macOS:
+<code>/Users/your-user-name/Library/Application Support/PanWriterUserData</code></li>
+<li>Linux: <code>~/.config/PanWriterUserData</code></li>
+<li>Windows:
+<code>C:\Users\your-user-name\AppData\Local\PanWriterUserData</code></li>
+</ul>
+<p>If the directory does not exist, you can create it.</p>
+<h2 id="settings">Settings</h2>
+<p>If you put a <code>settings.yaml</code> file in the data directory,
+PanWriter will read it on startup. Possible fields are currently
+only:</p>
+<pre><code>autoUpdateApp: true</code></pre>
+<h2 id="default-css-and-yaml">Default CSS and YAML</h2>
+<p>If you put a <code>default.yaml</code> file in the data directory,
+PanWriter will merge this with the YAML in your input file (to determine
+the command-line arguments to call pandoc with) and add the
+<code>--metadata-file</code> option. The YAML should be in the same
+format as above.</p>
+<p>To include CSS in your <code>default.yaml</code>, you can also use
+the same format as in-document metadata, for example:</p>
+<pre><code>header-includes: |-
+  &lt;style&gt;
+  blockquote {
+    font-style: italic;
+  }
+  &lt;/style&gt;</code></pre>
+<h2 id="document-types-themes">Document types / themes</h2>
+<p>You can e.g. put <code>type: letter</code> in the YAML of your input
+document. In that case, PanWriter will look for <code>letter.yaml</code>
+instead of <code>default.yaml</code> in the user data directory.</p>
+<h2 id="markdown-syntax">Markdown syntax</h2>
+<p>We use <code>markdown-it</code> for the preview pane, which is fully
+<a href="https://commonmark.org/">CommonMark</a>-compliant. It supports
+<a href="https://github.github.com/gfm/">GFM</a> tables (basically
+pandoc <code>pipe_tables</code>) and GFM Strikethrough
+(<code>strikeout</code>) out of the box. We also added a <a
+href="https://github.com/mb21/markdown-it-pandoc">bunch of plugins</a>,
+to make the preview behave as much as pandoc as possible (including
+attributes, <a
+href="http://pandoc.org/MANUAL.html#extension-fenced_divs"><code>fenced_divs</code></a>,
+<code>definition_lists</code>, <code>footnotes</code>,
+<code>grid_tables</code>, <code>implicit_figures</code>,
+<code>subscript</code>, <code>superscript</code>,
+<code>yaml_metadata_block</code> and <code>tex_math_dollars</code>). We
+explicitly don’t support <code>raw_html</code> or <code>raw_tex</code>,
+since everything should be doable with the <code>fenced_divs</code>,
+<code>bracketed_spans</code> and <code>raw_attribute</code>
+extensions.</p>
+<p>However, there might still be minor differences between the preview
+and <code>File -&gt; 'Print / PDF'</code> on one hand, and
+<code>File -&gt; Export</code> on the other.</p>
+<p>Things we should emulate in the preview, but for which there are <a
+href="https://github.com/atom-community/markdown-preview-plus/wiki/markdown-it-vs.-pandoc">no
+markdown-it plugins yet</a>:</p>
+<ul>
+<li><a
+href="http://pandoc.org/MANUAL.html#extension-raw_attribute"><code>raw_attribute</code></a>:
+we should probably just strip them from preview</li>
+<li>backslash at end of paragraph, e.g. <code>![](foo.png) \</code> An
+ugly workaround that already works is
+<code>![](foo.png) &amp;nbsp;</code></li>
+</ul>
+<p>Pandoc markdown supports a few more things which will not render
+correctly in the preview, but which are not so commonly used. However,
+you can still use them in your markdown file, and export via pandoc will
+work.</p>
+<h2 id="launching-from-the-command-line">Launching from the
+command-line</h2>
+<p>You can set up your system to launch PanWriter with:</p>
+<pre><code>panwriter myfile.md</code></pre>
+<p>On macOS, you should put the following in your
+<code>~/.bash_profile</code> or similar:</p>
+<pre><code>function panwriter(){ open -a PanWriter &quot;$@&quot;; }</code></pre>
+<p>On Linux and Windows, you can make an alias to the correct location
+of the <code>panwriter</code> executable.</p>
+<h1 id="about-css-for-print">About CSS for print</h1>
+<p>Unfortunately, still no browser fully implements the CSS specs for
+paged media (paged media are e.g. print or PDF). Therefore, PanWriter’s
+preview is powered by <a
+href="https://gitlab.pagedmedia.org/tools/pagedjs">pagedjs</a> – a
+collection of paged media polyfills by <a
+href="https://pagedmedia.org">pagedmedia.org</a>. Some background on
+using CSS for print:</p>
+<ul>
+<li><a
+href="https://alistapart.com/article/building-books-with-css3">Motivating
+article on A List Apart</a></li>
+<li><a href="https://print-css.rocks">Print-CSS resources,
+tools</a></li>
+<li><a href="https://www.w3.org/TR/css-page-3/">W3C Paged Media
+Module</a></li>
+<li><a href="https://www.w3.org/TR/css-gcpm-3/">W3C Generated Content
+for Paged Media</a></li>
+</ul>
+</body>
+</html>
