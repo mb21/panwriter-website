@@ -7,10 +7,10 @@
   <title>PanWriter Manual</title>
   <style>
     html {
-      line-height: 1.5;
       font-family: -apple-system, BlinkMacSystemFont, Segoe UI,
     sans-serif;
       font-size: 20px;
+      line-height: 1.5;
       color: #1a1a1a;
       background-color: #fdfdfd;
     }
@@ -29,13 +29,16 @@
     @media (max-width: 600px) {
       body {
         font-size: 0.9em;
-        padding: 1em;
+        padding: 12px;
       }
       h1 {
         font-size: 1.8em;
       }
     }
     @media print {
+      html {
+        background-color: white;
+      }
       body {
         background-color: transparent;
         color: black;
@@ -59,6 +62,10 @@
       color: #1a1a1a;
     }
     img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
       max-width: 100%;
     }
     h1, h2, h3, h4, h5, h6 {
@@ -85,11 +92,12 @@
       color: #606060;
     }
     code {
-      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
       background-color: #f0f0f0;
       padding: .2em .4em;
       font-size: 85%;
       margin: 0;
+      hyphens: manual;
     }
     pre {
       margin: 1em 0;
@@ -153,18 +161,23 @@
     }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="https://github.com/mb21/panwriter/raw/master/icons/icon.png" />
   <script data-goatcounter="https://mb21.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <nav id="nav">
@@ -182,16 +195,24 @@
 <nav id="TOC" role="doc-toc">
 <h2 id="toc-title">Table of Contents</h2>
 <ul>
-<li><a href="#export-preview-to-pdf">Export preview to PDF</a></li>
-<li><a href="#export-via-pandoc">Export via pandoc</a></li>
-<li><a href="#user-data-directory">User Data Directory</a></li>
-<li><a href="#settings">Settings</a></li>
-<li><a href="#default-css-and-yaml">Default CSS and YAML</a></li>
-<li><a href="#document-types-themes">Document types / themes</a></li>
-<li><a href="#markdown-syntax">Markdown syntax</a></li>
-<li><a href="#launching-from-the-command-line">Launching from the
+<li><a href="#export-preview-to-pdf"
+id="toc-export-preview-to-pdf">Export preview to PDF</a></li>
+<li><a href="#export-via-pandoc" id="toc-export-via-pandoc">Export via
+pandoc</a></li>
+<li><a href="#user-data-directory" id="toc-user-data-directory">User
+Data Directory</a></li>
+<li><a href="#settings" id="toc-settings">Settings</a></li>
+<li><a href="#default-css-and-yaml"
+id="toc-default-css-and-yaml">Default CSS and YAML</a></li>
+<li><a href="#document-types-themes"
+id="toc-document-types-themes">Document types / themes</a></li>
+<li><a href="#markdown-syntax" id="toc-markdown-syntax">Markdown
+syntax</a></li>
+<li><a href="#launching-from-the-command-line"
+id="toc-launching-from-the-command-line">Launching from the
 command-line</a></li>
-<li><a href="#about-css-for-print">About CSS for print</a></li>
+<li><a href="#about-css-for-print" id="toc-about-css-for-print">About
+CSS for print</a></li>
 </ul>
 </nav>
 <h2 id="export-preview-to-pdf">Export preview to PDF</h2>
@@ -250,13 +271,15 @@ guide</a> for available options.</p>
 look up in the <code>output</code> YAML can be specified with the
 <code>pdf-format</code> key (see example above). Default is also
 <code>latex</code>, but you can also use <code>context</code>,
-<code>html</code>, <code>ms</code>, <code>beamer</code>,
-<code>revealjs</code>, etc. In fact, you could set it to anything, if
-you had a corresponding key in the <code>output</code> YAML with a
-<code>to:</code> field. See also <a
-href="http://pandoc.org/MANUAL.html#creating-a-pdf">Creating a PDF with
-pandoc</a>.</li>
+<code>html</code>, <code>ms</code>, <code>beamer</code>, etc. See also
+<a href="http://pandoc.org/MANUAL.html#creating-a-pdf">Creating a PDF
+with pandoc</a>.</li>
 </ol>
+<p>Note how in the example above, we use <code>to: epub2</code>, to
+overwrite pandoc’s default format for the <code>.epub</code> file
+extensions. The same approach can be used for other ambiguous file
+extensions like <code>.html</code> (e.g. <code>to: html4</code>,
+<code>to: revealjs</code>, etc.).</p>
 <h2 id="user-data-directory">User Data Directory</h2>
 <p>You can place certain files in the PanWriter user directory, which <a
 href="https://electronjs.org/docs/api/app#appgetpathname">should
@@ -265,8 +288,8 @@ be</a>:</p>
 <li>macOS:
 <code>/Users/your-user-name/Library/Application Support/PanWriterUserData</code></li>
 <li>Linux: <code>~/.config/PanWriterUserData</code></li>
-<li>Windows:
-<code>C:\Users\your-user-name\AppData\Local\PanWriterUserData</code></li>
+<li>Windows: <code>%APPDATA%</code>, which in Windows 10/11 is
+<code>C:\Users\your-user-name\AppData\Roaming\PanWriterUserData</code></li>
 </ul>
 <p>If the directory does not exist, you can create it.</p>
 <h2 id="settings">Settings</h2>
@@ -288,6 +311,13 @@ the same format as in-document metadata, for example:</p>
     font-style: italic;
   }
   &lt;/style&gt;</code></pre>
+<p>Note that when exporting via pandoc, <a
+href="https://pandoc.org/MANUAL.html#templates">pandoc’s template</a>
+with its own <a
+href="https://pandoc.org/MANUAL.html#variables-for-html">document-css</a>
+is applied as well. You can turn it off by adding the following to your
+YAML metadata:</p>
+<pre><code>document-css: false</code></pre>
 <h2 id="document-types-themes">Document types / themes</h2>
 <p>You can e.g. put <code>type: letter</code> in the YAML of your input
 document. In that case, PanWriter will look for <code>letter.yaml</code>
