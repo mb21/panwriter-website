@@ -1,7 +1,7 @@
 clear
 
 cd ../panwriter
-yarn run website:build
+npm run website:build
 cd -
 rm -r try
 cp -r ../panwriter/try .
@@ -39,7 +39,7 @@ INDEXCSS='<style>
 
 
 pandoc -M pagetitle='PanWriter' \
-  -M mainfont="$FONT" -M monobackgroundcolor=#f0f0f0 -s \
+  -M mainfont="$FONT" -M fontsize=20px -M linestretch=1.5 -M monobackgroundcolor=#f0f0f0 -s \
   --css styles.css -M document-css=true \
   -V header-includes="$INCLUDES" \
   -V header-includes="$INDEXCSS" \
@@ -48,11 +48,11 @@ pandoc -M pagetitle='PanWriter' \
   download.md ../panwriter/src/website.md  --output index.html
 
 pandoc --toc \
-  -M mainfont="$FONT" -M monobackgroundcolor=#f0f0f0 -s \
+  -M mainfont="$FONT" -M fontsize=20px -M linestretch=1.5 -M monobackgroundcolor=#f0f0f0 -s \
   --css styles.css -M document-css=true \
   -V header-includes="$INCLUDES" \
   -V toc-title="Table of Contents"\
   --include-before-body nav.html \
   ../panwriter/MANUAL.md  --output MANUAL.html
 
-python -m SimpleHTTPServer 8000 .
+python3 -m http.server
