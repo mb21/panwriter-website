@@ -1,6 +1,6 @@
 # PanWriter
 
-Markdown editor for macOS, Windows and Linux.
+Free and open-source markdown editor for macOS, Windows and Linux.
 
 ::: download
 
