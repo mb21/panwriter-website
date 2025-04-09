@@ -46,7 +46,7 @@ figcaption {
 }
 @media (max-width: 600px) {
   figure {
-    margin: 0 -1em;
+    margin: 0 -12px;
   }
   figcaption {
     margin-left: 1em;
