@@ -53,6 +53,10 @@
           armLink.innerHTML = 'Download for Apple Silicon';
           btn.parentNode.insertBefore(armLink, btn.nextSibling);
           btn.parentNode.insertBefore(document.createTextNode(' '), btn.nextSibling);
+
+          var par = document.createElement('p');
+          par.innerHTML = 'Due to macOS <a href="https://github.com/mb21/panwriter/issues/33">security</a>, run the following in your Terminal after moving PanWriter to the Applications folder:<br><code>xattr -d com.apple.quarantine /Applications/PanWriter.app</code>';
+          document.querySelector('.download')?.appendChild(par);
         }
       }
     });

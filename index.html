@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>PanWriter</title>
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     html {
       font-family: -apple-system, BlinkMacSystemFont, Segoe UI,
     sans-serif;
@@ -115,8 +118,8 @@
      overflow: visible;
     }
     hr {
-      background-color: #1a1a1a;
       border: none;
+      border-top: 1px solid #1a1a1a;
       height: 1px;
       margin: 1em 0;
     }
@@ -217,7 +220,8 @@
   <img loading="lazy" width="128" height="128" src="forkme.svg" class="forkme" alt="Fork me on GitHub" />
 </a>
 <h1 id="panwriter">PanWriter</h1>
-<p>Free and open-source markdown editor for macOS, Windows and Linux.</p>
+<p>Free and open-source markdown editor for macOS, Windows and
+Linux.</p>
 <div class="download">
 <ul>
 <li><a href="https://github.com/mb21/panwriter/releases/"
@@ -364,6 +368,10 @@ href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
           armLink.innerHTML = 'Download for Apple Silicon';
           btn.parentNode.insertBefore(armLink, btn.nextSibling);
           btn.parentNode.insertBefore(document.createTextNode(' '), btn.nextSibling);
+
+          var par = document.createElement('p');
+          par.innerHTML = 'Due to macOS <a href="https://github.com/mb21/panwriter/issues/33">security</a>, run the following in your Terminal after moving PanWriter to the Applications folder:<br><code>xattr -d com.apple.quarantine /Applications/PanWriter.app</code>';
+          document.querySelector('.download')?.appendChild(par);
         }
       }
     });
